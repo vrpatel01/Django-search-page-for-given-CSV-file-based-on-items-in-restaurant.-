@@ -1,0 +1,67 @@
+<!-- templates/search_results.html -->
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <title>Search Results</title>
+      <style>
+          /* Custom CSS styles */
+          body {
+              font-family: Arial, sans-serif;
+          }
+  
+          .container {
+              max-width: 600px;
+              margin: 50px auto;
+              padding: 20px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+          }
+  
+          h1 {
+              margin-bottom: 20px;
+          }
+  
+          ul {
+              list-style: none;
+              padding: 0;
+          }
+  
+          li {
+              margin-bottom: 10px;
+          }
+  
+          .home-button {
+              display: inline-block;
+              padding: 10px 20px;
+              background-color: #007bff;
+              color: #fff;
+              border: none;
+              border-radius: 5px;
+              font-size: 16px;
+              text-decoration: none;
+              cursor: pointer;
+          }
+  
+          .home-button:hover {
+              background-color: #0056b3;
+          }
+      </style>
+  </head>
+  <body>
+      <div class="container">
+          <h1>Search Results for {{ query }}</h1>
+  
+          <ul>
+              {% for restro in object_list %}
+              <li>{{ restro.name }}, {{ restro.location }}</li>
+              {% empty %}
+              <li>No results found.</li>
+              {% endfor %}
+          </ul>
+  
+          <a class="home-button" href="{% url 'home' %}">Home</a>
+      </div>
+  </body>
+  </html>
+  
+</ul>
